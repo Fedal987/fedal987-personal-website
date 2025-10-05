@@ -1,82 +1,122 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<!-- 我用数字草你吗,我每句话都草你吗 -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fedal987的老窝</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="logo/icon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hi, I'm Fedal987</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/Styles.css">
+  <link rel="icon" href="icon/icon.ico" type="image/x-icon">
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <a href="#home" class="nav-link active">首页</a>
-            <a href="#projects" class="nav-link">项目</a>
-            <a href="#achievements" class="nav-link">成就</a>
-            <a href="#contact" class="nav-link">联系我</a>
-        </nav>
-    </header>
-    <div class="video-background">
-        <video autoplay loop muted>
-            <source src="video/background.mp4" type="video/mp4">
-        </video>
-    </div>
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="content-section active" id="home">
-            <div class="profile">
-                <h1>Fedal987</h1>
-                <p class="title">一名在人工智能赛道上的探险者 - SigmaStudio Owner</p>
-                <p class="description"></p>
-                <div class="social-links">
-                    <a href="https://github.com/L1quidBounce">GitHub</a>
-                    <a href="https://space.bilibili.com/3546903838985044">BiliBili</a>
-                    <a href="https://space.bilibili.com/412787074">工作室账号</a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="content-section" id="projects">
-            <div class="profile">
-                <h1>项目展示</h1>
-                <div class="social-links">
-                    <h1>Projects:</h1>
-                    <p>Neuro-bot(Recoding): 一款基于调用LLM API实现的对话机器人</p>
-                    <div style="margin-top: 20px; margin-left: -12px;">
-                        <a href="https://github.com/L1quidBounce/Neuro-bot">项目地址</a>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="content-section" id="achievements">
-            <div class="profile">
-                <h1>个人成就</h1>
-                <div class="achievements-list">
-                    <ul>
-                        <li>2023年：主播啥事都没干。</li>
-                        <li>2024年：骗你的今年也没有。</li>
-                        <li>2025年：有，有吗？</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="content-section" id="contact">
-            <div class="profile">
-                <h1>联系方式</h1>
-                <div class="contact-info">
-                    <h1>邮箱:</h1>
-                    <h2>995686342@qq.com<h2>
-                    <h2>2481265031@qq.com(备用)</h2>
-                </div>
-            </div>
-        </div>
+<div class="sidebar" id="sidebar">
+  <div>
+    <div class="header">
+      <img src="img/fedal987.jpg" alt="用户">
+      <div class="info">
+        <strong>Fedal987</strong><br>
+        SigmaStudio Owner
+      </div>
     </div>
-    <footer class="footer">
-        <p>&copy; 2025 SigmaStudio. All rights reserved.</p>
-    </footer>
-    <script src="js/main.js"></script>
+    <div class="menu">
+      <div class="menu-item active"><i class="fas fa-home"></i><span>首页</span></div>
+      <div class="menu-item"><i class="fas fa-bell"></i><span>项目</span></div>
+      <div class="menu-item"><i class="fas fa-envelope"></i><span>联系方式</span></div>
+      <div class="menu-item"><i class="fas fa-star"></i><span>成就</span></div>
+    </div>
+  </div>
+  <div class="bottom">
+    <div class="toggle-theme">
+      <i class="fas fa-moon"></i><span>深色模式</span>
+      <label class="switch">
+        <input type="checkbox" id="theme-toggle">
+      </label>
+    </div>
+    <div class="toggle-sidebar">
+      <i class="fas fa-angle-double-left" id="collapse-icon"></i><span>折叠</span>
+    </div>
+  </div>
+</div>
+
+<div class="main-content">
+  <section id="home-section" class="section home-section">
+    <div class="welcome-message">
+      <h1>Hi, I'm Fedal987</h1>
+      <p>“真正展示我们是谁的不是我们的能力，而是我们的选择。每一天我们都在做出定义我们的决定，尽管我们会面对困难和挑战，重要的是以勇气、诚实和同情心去行动。”</p>
+      <div class="home-actions">
+        <a class="btn" href="#projects-section">查看项目</a>
+        <a class="btn btn-outline" href="#contact-section">联系我</a>
+      </div>
+      <div class="card">
+        <h2>GitHub Contributions</h2>
+        <img src="https://ghchart.rshah.org/Fedal987" alt="GitHub Contributions Chart">
+      </div>
+    </div>
+  </section>
+
+  <section id="projects-section" class="section projects-section">
+    <h2>项目</h2>
+    <p>以下是我近期的一些项目。</p>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="img/neuro.gif" alt="项目图示">
+        <h3>Neuro-bot(重写中)</h3>
+        <p>一款基于调用LLM API实现的对话机器人<br><i>没错我还是个蜂群 :D</i></p>
+        <div class="card-actions">
+          <a class="btn btn-sm" href="https://github.com/Fedal987/Neuro-bot">查看</a>
+          <a class="btn btn-sm btn-outline" href="https://github.com/Fedal987/Neuro-bot">源码</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="img/YeLu.jpg" alt="项目图示">
+        <h3>个人网站</h3>
+        <p>基于轻量静态站点与现代布局实现的个人主页模板。</p>
+        <div class="card-actions">
+          <a class="btn btn-sm" href="#">查看</a>
+          <a class="btn btn-sm btn-outline" href="https://github.com/Fedal987/fedal987-personal-website">源码</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about-section" class="section about-section">
+    <h2>关于我</h2>
+    <p>您好，我是 Fedal987，热衷于机器学习，深度学习与前端界面开发。喜欢把复杂的问题拆解为可复用的模块与工具。</p>
+    <h3>技能</h3>
+    <ul class="skills">
+      <li>TensorFlow / PyTorch</li>
+      <li>JavaScript / HTML / CSS / Vue</li>
+      <li>Python</li>
+      <li>项目管理 & 文档</li>
+    </ul>
+  </section>
+
+  <section id="contact-section" class="section contact-section">
+    <h2>联系方式</h2>
+    <div class="contact-grid">
+      <div>
+        <p>如果你想合作或有问题，欢迎发邮件或填写下面的表单。</p>
+        <div class="contact-cards">
+          <div class="card"><i class="fas fa-envelope"></i><div><strong>Email</strong><div>fedal987@fedal.icu</div></div></div>
+          <div class="card"><i class="fa-brands fa-bilibili"></i><div><strong>BiliBili</strong><div><a href="https://space.bilibili.com/3546903838985044">Fedal987</a></div></div></div>
+          <div class="card"><i class="fa-brands fa-github"></i><div><strong>GitHub</strong><div><a href="https://github.com/Fedal987/">Fedal987</a></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="achievements-section" class="section achievements-section">
+    <h2>成就</h2>
+    <ul>
+      <li>开发Neuro-bot 基于调用LLM API实现的对话机器人</li>
+      <li>在开源社区维护若干工具与文档</li>
+    </ul>
+  </section>
+
+  <footer class="site-footer">© 2025 SigmaStudio. All rights reserved.</footer>
+</div>
+
+<script src="js/script.js"></script>
 </body>
 </html>
