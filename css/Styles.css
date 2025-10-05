@@ -147,38 +147,6 @@ body.dark .main-content {
   margin-left: auto;
 }
 
-input[type="checkbox"] {
-  width: 40px;
-  height: 20px;
-  appearance: none;
-  background: #ccc;
-  border-radius: 20px;
-  position: relative;
-  outline: none;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-input[type="checkbox"]::before {
-  content: "";
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  background: #fff;
-  border-radius: 50%;
-  top: 1px;
-  left: 1px;
-  transition: var(--transition);
-}
-
-input[type="checkbox"]:checked {
-  background: var(--primary);
-}
-
-input[type="checkbox"]:checked::before {
-  transform: translateX(20px);
-}
-
 .main-content {
   margin-left: 250px;
   padding: 40px;
