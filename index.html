@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 
+
+<!--
+  TODO:
+  - [BUG] 在部署环境中, 技术栈图标显示异常, 可能是路径问题, 需要调整图标路径或使用绝对路径 | 2026-03-21 14:50 Fixed
+  - [BUG] 在部署环境中，技术栈图标显示大小和排序异常，可能是css样式未正确加载，需检查样式路径或使用内联样式 | 2026-03-21 15:33 Fixed
+  - [BUG] 在部署环境中，用户网页加载完成后点击任意位置bgm未播放，可能是因为cloudflare资源加载问题，暂时没想出来解决方法 | 2026-03-21 15:33 Fixed
+  - [BUG] 在部署环境中，夜间模式显示问题 | 2026-03-21 15:33 Fixed
+-->
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,6 +51,9 @@
     </div>
   </div>
 
+  <audio id="bgm" src="PC/music/music.mp3" loop></audio>
+  <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.2" style="position: fixed; bottom: 20px; right: 20px; width: 100px; z-index: 1000;">
+
   <div class="main-content">
     <section id="home-section" class="section home-section">
       <div class="welcome-message">
@@ -65,7 +77,7 @@
         <div class="project-card">
           <img src="img/neuro.gif" alt="项目图示">
           <h3>Neuro-bot(重写中)</h3>
-          <p>一款基于调用LLM API实现的对话机器人<br><i>没错我还是个蜂群 :D</i></p>
+          <p>一款基于调用LLM API实现的对话机器人<br></p>
           <div class="card-actions">
             <a class="btn btn-sm" href="https://github.com/Fedal987/Neuro-bot">查看</a>
             <a class="btn btn-sm btn-outline" href="https://github.com/Fedal987/Neuro-bot">源码</a>
@@ -86,12 +98,47 @@
     <section id="about-section" class="section about-section">
       <h2>关于我</h2>
       <p>您好，我是 Fedal987，热衷于机器学习，深度学习与前端界面开发。喜欢把复杂的问题拆解为可复用的模块与工具。</p>
-      <h3>技能</h3>
+      <h3>技术栈</h3>
       <ul class="skills">
-        <li>TensorFlow / PyTorch</li>
-        <li>JavaScript / HTML / CSS / Vue</li>
-        <li>Python</li>
-        <li>项目管理 & 文档</li>
+        <li>
+          <a href="https://www.tensorflow.org/" target="_blank" rel="noopener noreferrer">
+            <img src="icon/tensorflow.png" alt="TensorFlow">
+        </li>
+        <li>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">
+            <img src="icon/javascript.png" alt="JavaScript">
+          </a>
+        </li>
+        <li>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer">
+            <img src="icon/h5.png" alt="HTML5">
+          </a>
+        </li>
+        <li>
+          <a href="https://vuejs.org/" target="_blank" rel="noopener noreferrer">
+            <img src="icon/vuejs.png" alt="Vue.js">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer">
+            <img src="icon/python.png" alt="Python">
+          </a>
+        </li>
+        <li>
+          <a href="https://numpy.org/" target="_blank" rel="noopener noreferrer">
+            <img src="icon/numpy.png" alt="NumPy">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.mysql.com/" target="_blank" rel="noopener noreferrer">
+            <img src="icon/mysql.png" alt="MySQL">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.mongodb.com/" target="_blank" rel="noopener noreferrer">
+            <img src="icon/mongodb.png" alt="MongoDB">
+          </a>
+        </li>
       </ul>
     </section>
 
@@ -99,11 +146,11 @@
       <h2>联系方式</h2>
       <div class="contact-grid">
         <div>
-          <p>如果你想合作或有问题，欢迎发邮件或填写下面的表单。</p>
+          <p>如果您想合作或有问题，欢迎发邮件或填写下面的表单。</p>
           <div class="contact-cards">
             <div class="card"><i class="fas fa-envelope"></i>
               <div><strong>Email</strong>
-                <div>fedal987@fedal.icu</div>
+                <div><a href="mailto:fedal987@fedal.icu">fedal987@fedal.icu</a></div>
               </div>
             </div>
             <div class="card"><i class="fa-brands fa-bilibili"></i>

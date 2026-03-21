@@ -3,17 +3,12 @@ const toggleTheme = document.getElementById('theme-toggle');
 const collapseBtn = document.querySelector('.toggle-sidebar');
 const collapseIcon = document.getElementById('collapse-icon');
 
-// Make the whole toggle-theme row clickable (so when sidebar is collapsed and only the icon
-// is visible, clicking it will still toggle the theme). Skip when the actual checkbox/label
-// was the click target to avoid double toggles.
 const toggleThemeContainer = document.querySelector('.toggle-theme');
 if (toggleThemeContainer) {
   toggleThemeContainer.addEventListener('click', (e) => {
     if (!toggleTheme) return;
-    // If click was on the checkbox or its label, do nothing — checkbox's change will handle it
     if (e.target === toggleTheme || e.target.closest('label.switch')) return;
     toggleTheme.checked = !toggleTheme.checked;
-    // Trigger change so existing handler runs
     toggleTheme.dispatchEvent(new Event('change', { bubbles: true }));
   });
 }
@@ -21,6 +16,7 @@ if (toggleThemeContainer) {
 toggleTheme.addEventListener('change', () => {
   sidebar.classList.toggle('dark');
   document.body.classList.toggle('dark');
+  localStorage.setItem('theme', toggleTheme.checked ? 'dark' : 'light');
 });
 
 collapseBtn.addEventListener('click', () => {
@@ -50,4 +46,42 @@ document.querySelectorAll('.menu-item').forEach(item => {
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const savedTheme = localStorage.getItem('theme');
+  let isDarkMode = false;
+
+  if (savedTheme === 'dark') {
+    isDarkMode = true;
+  } else if (savedTheme === 'light') {
+    isDarkMode = false;
+  } else {
+    isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+
+  if (isDarkMode) {
+    toggleTheme.checked = true;
+    sidebar.classList.add('dark');
+    document.body.classList.add('dark');
+  }
+
+  var audio = document.getElementById('bgm');
+  var volumeSlider = document.getElementById('volume-slider');
+
+  audio.volume = volumeSlider.value;
+    
+  volumeSlider.addEventListener('input', function() {
+    audio.volume = this.value;
+  });
+    
+  // bind点击事件 用户点击任意位置即可播放bgm
+  document.addEventListener('click', function() {
+    audio.play();
+    document.removeEventListener('click', arguments.callee);
+  }, { once: true });
+    
+  document.addEventListener("WeixinJSBridgeReady", function () {
+    audio.play();
+  }, false);
 });

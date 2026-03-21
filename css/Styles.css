@@ -289,14 +289,46 @@ body.dark .main-content {
   list-style: none;
   padding: 0;
   display: flex;
-  gap: 12px;
+  gap: 2px;
   flex-wrap: wrap;
 }
 
 .about-section .skills li {
-  background: rgba(0, 0, 0, 0.04);
-  padding: 8px 12px;
+  background: transparent;
+  padding: 1px 2px;
   border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  box-shadow: none;
+  border: none;
+}
+
+
+
+.about-section .skills li img {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  background: #fff;
+  padding: 1px;
+  box-sizing: border-box;
+  object-fit: contain;
+  box-shadow: none;
+}
+
+.about-section .skills li .icon-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+body.dark .about-section .skills li img {
+  background: #333;
+}
+
+body.dark .about-section .skills li img {
+  background: #333;
 }
 
 .contact-grid {
