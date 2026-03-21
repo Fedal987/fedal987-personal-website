@@ -147,7 +147,6 @@ body.dark .main-content {
   margin-left: auto;
 }
 
-/* Custom toggle switch */
 .switch {
   position: relative;
   width: 44px;
@@ -198,7 +197,6 @@ body.dark .main-content {
   transform: translateX(20px);
 }
 
-/* Accessibility: focus visible */
 .switch input[type="checkbox"]:focus + .slider {
   box-shadow: 0 0 0 3px rgba(230,57,70,0.12);
 }
@@ -303,8 +301,6 @@ body.dark .main-content {
   box-shadow: none;
   border: none;
 }
-
-
 
 .about-section .skills li img {
   width: 64px;
